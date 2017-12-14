@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js学习</title>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+			//求阶乘的函数
+			function factorial(x) {
+				if(x < 0){
+					return "%*&^%$#@!";
+				}else if( x == 0 || x == 1){
+					return 1;					
+				}else{
+					return x * factorial(x - 1);
+				}
+			}
+			function factorial1(x){
+				if(x < 0){
+					return "%*&^%$#@!";
+				}else{
+			 		var m = 1;
+			 		for(var i = 1; i <= x; i++){
+			 			m *= i;
+			 		}
+			 		return m;
+			 	}
+			}
+			//著名的斐波那契数列 1 1 2 3 5 8输出第n项
+			function fibonacci(n){
+				if(n <= 0){
+					return '你在逗我';
+				}else if(n == 1||n == 2){
+					return 1;
+				}else{
+					return fibonacci(n - 1) + fibonacci(n - 2);
+				}
+			}
+			//fibonacci(2) + fibonacci(1)
+			
+			//编写一个程序，输入一个三位数的正整数，输出时反向输出。
+			//如：输入456.输出654
+			function reverse(n) {
+				var last,
+					first,
+					second;
+				last = n % 10;
+				second = parseInt(n / 10) % 10;
+				first = parseInt(n / 100) % 10;
+				return last * 100 + second * 10 + first;
+			}
+			function reverse1(n){
+				var oldNum = (n < 0) ? (-1) * n : n,
+					newNum = 0;
+				if(oldNum == 0){
+					return oldNum;
+				}
+				while(oldNum){
+					newNum = oldNum % 10 + newNum * 10;
+					oldNum = parseInt(oldNum / 10);
+				}
+				return  (n < 0) ? (-1) * newNum : newNum;
+			}
+			//返回比较大的那个数
+			function retMax(a, b) {
+				return (a > b) ? a : b;
+			}
+			//Math对象
+			//Math.round()，四舍五入
+			//Math.random()，取随机数，取值范围为[0,1)
+			//Math.max(5,7)  返回7，返回两个数里面比较大的
+			
+			//求100以内的质数
+			//算法的优化
+			//求程序运行时间
+			var firstTime = new Date().getTime();
+//			prime();
+//			for(var i = 0; i < 100000000; i++) {
+//				
+//			}
+			 var lastTime = new Date().getTime();
+			 console.log(lastTime - firstTime);
+			function prime(){
+				for(var i = 1;i<100000;i++){
+					var count = 0;
+					var index = Math.sqrt(i);
+					index = i;
+					for(var j = 1; j <= index; j++){
+						if(i % j == 0){
+							count++;
+						}
+					}
+					if(count == 2){
+//						console.log(i);
+					}
+				}
+			}
+			function animalYell(a){
+				var animal = ['狗','猫','牛','蜗牛'],
+					yell = ['bark','miao','moul','no yell'],
+					len = animal.length;
+				for(var i = 0; i < len; i++){
+					if(animal[i] == '蜗牛'){
+						return yell[i];
+					}
+					if(a.indexOf(animal[i]) >= 0){
+						return yell[i];
+					}
+				}
+				return 'no animal';
+			}
+			// 加法计数器
+			function sum() {
+				var sum = 0;
+				for (var i = 0; i < arguments.length; i ++) {
+					sum += arguments[i];
+				}
+				return sum;
+			}
+		</script>
+	</body>
+</html>
